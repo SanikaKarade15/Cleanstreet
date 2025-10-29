@@ -1,0 +1,291 @@
+/* Global Styles for SkyFleet Rentals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Custom CSS Variables */
+:root {
+  --primary-color: #292929;
+  --secondary-color: #64748b;
+  --accent-color: #292929;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  --light-color: #f5f5f5;
+  --dark-color: #1e293b;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+   --dark-color: #2d2d2d;      /* Grey background for footer */
+  --accent-color: #f15b2a;    /* Orange for section headings */
+  --transition: all 0.3s ease;
+}
+
+/* Utility Classes */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  transition: var(--transition);
+}
+
+.btn-primary-custom:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.card-custom {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Navigation Styles */
+.navbar-custom {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Title (SkyFleet Rentals) */
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+  font-size: 1.9rem; /* Increased from 1.5rem */
+  color: #e76f51 !important;
+}
+
+/* Nav Links (Home, Browse Drones, etc.) */
+.navbar-custom .navbar-nav .nav-link {
+  color: #000 !important;
+  font-size: 1.2rem;  /* Increased from default */
+  padding: 0.75rem 1rem; /* Bigger clickable area */
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #e76f51 !important;
+}
+
+
+/* Hero Section */
+.hero-section {
+  background-color: #f5f5f5; /* Same as navbar */
+  color: #000; /* Black text for contrast */
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  display: none; /* Remove the grain texture */
+}
+
+
+/* Drone Card Styles */
+.drone-card {
+  height: 100%;
+  transition: var(--transition);
+}
+
+.drone-card:hover {
+  transform: translateY(-8px);
+}
+
+.drone-image {
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.drone-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.drone-features {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+
+/* Footer Styles */
+.footer {
+  background-color: var(--dark-color); /* Grey background */
+  color: white;
+  padding: 40px 0 20px;
+}
+
+.footer h5 {
+  color: var(--accent-color); /* Orange headings */
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: white;
+}
+
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Toast Notifications */
+.toast-custom {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(255, 77, 48, 0.25);
+}
+
+/* Button Groups */
+.btn-group-custom .btn {
+  border-radius: var(--border-radius);
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Badge Styles */
+.badge-custom {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Orange Theme Classes */
+.text-orange {
+  color: #e76f51 !important;
+}
+
+.btn.btn-orange {
+  background-color: #e76f51 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+}
+
+.btn.btn-orange:hover {
+  background-color: #d75d40 !important;
+  color: #fff !important;
+}
+
+
+.btn-outline-orange {
+  background-color: transparent;
+  color: #e76f51;
+  border: 2px solid #e76f51;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.btn-outline-orange:hover {
+  background-color: #e76f51;
+  color: #fff !important;
+}
+
+/* LOGIN LINK STYLING */
+.login-link {
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+.login-link:hover {
+  color: #e76f51 !important; /* Your orange */
+}
+
+/* Navbar Button Styling (Login/Register) */
+.navbar-custom .btn {
+  font-size: 1.05rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius);
+  line-height: 1.5;
+}
